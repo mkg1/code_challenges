@@ -29,15 +29,29 @@ require 'minitest/pride'
 # end
 
 #another way
+# def first_name(name)
+#   arrayed = name.split
+#   arrayed.length > 1 ? arrayed[0..-2].join(" ") : arrayed.join("")
+# end
+#
+# def last_name(name)
+#   arrayed = name.split
+#   arrayed.length > 1 ? arrayed[-1] : ""
+# end
+
+#a third way
 def first_name(name)
-  arrayed = name.split
-  arrayed.length > 1 ? arrayed[0..-2].join(" ") : arrayed.join("")
+  array = name.to_s.split
+  return name.to_s if array.length < 2
+  array[0..-2].join(" ")
 end
 
 def last_name(name)
-  arrayed = name.split
-  arrayed.length > 1 ? arrayed[-1] : ""
+  array = name.to_s.split
+  return "" if array.length < 2
+  array[-1]
 end
+
 
 class StringSplitChallenge < MiniTest::Test
   def test_first_name
