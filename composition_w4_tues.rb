@@ -6,14 +6,31 @@ require 'minitest/pride'
 
 # WRITE YOUR CODE HERE.
 #one way
+# class OddArray
+#   def initialize(array)
+#     @odds = []
+#     array.each do |x|
+#       if x % 2 != 0
+#         @odds << x
+#       end
+#     end
+#   end
+#
+#   def to_a
+#     @odds
+#   end
+#
+#   def add(number)
+#     if number % 2 != 0
+#       @odds << number
+#     end
+#   end
+# end
+
+#refactor
 class OddArray
   def initialize(array)
-    @odds = []
-    array.each do |x|
-      if x % 2 != 0
-        @odds << x
-      end
-    end
+    @odds = array.select {|n| n.odd?}
   end
 
   def to_a
@@ -21,9 +38,7 @@ class OddArray
   end
 
   def add(number)
-    if number % 2 != 0
-      @odds << number
-    end
+    @odds << number if number.odd?
   end
 end
 
