@@ -6,12 +6,9 @@ require 'minitest/pride'
 
 # WRITE YOUR CODE HERE.
 class Goat
+  attr_reader :name
   def initialize(name)
     @name = name
-  end
-
-  def name
-    @name
   end
 
   private def hate_cats
