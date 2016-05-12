@@ -6,14 +6,34 @@ require 'minitest/pride'
 #
 # You may not write any methods in the existing classes, but you may write
 # `include` statements in them.
+module Intelligence
+  def say_name
+    "My name is #{@name}"
+  end
+end
+
+module Bipedal
+  NUMBER_OF_LEGS = 2
+
+  def run
+    "Huff puff huff puff"
+  end
+
+  def number_of_legs
+    NUMBER_OF_LEGS
+  end
+end
 
 class Human
+  include Intelligence
+  include Bipedal
   def initialize(name)
     @name = name
   end
 end
 
 class Ai
+  include Intelligence
   def initialize(name, version)
     @name = name
     @version = version
@@ -21,6 +41,7 @@ class Ai
 end
 
 class Ostrich
+  include Bipedal
   def initialize(height)
     @height = height
   end
