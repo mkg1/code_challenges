@@ -8,10 +8,9 @@ require 'minitest/pride'
 # WRITE YOUR CODE HERE.  Name your method `complements?`.
 def complements?(array, number)
   return false if array.nil? || array.length < 2
-
-  array.each_with_index do |x, i|
-    array[(i+1)..-1].each do |y|
-      return true if x + y == number
+  array.each_with_index do |i, x|
+    array[(x+1)..-1].each do |j|
+      return true if i + j == number
     end
   end
   false
