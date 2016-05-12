@@ -7,6 +7,29 @@ require 'minitest/pride'
 # WRITE YOUR CODE HERE.  In this challenge, names longer than 5 characters are
 # considered long.
 
+def has_even?(array)
+  array.any?{|n| n.even?}
+end
+
+def all_short?(array)
+  array.all?{|n| n.length < 6}
+end
+
+def squares(array)
+  array.map{|n| n*n}
+end
+
+def  just_short(array)
+  array.select{|n| n.length < 6}
+end
+
+def no_long(array)
+  array.reject{|n| n.length > 5}
+end
+
+def product(array)
+  array.reduce(:*)
+end
 
 class EnumerableChallenge < MiniTest::Test
 
