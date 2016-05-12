@@ -8,7 +8,9 @@ require 'minitest/pride'
 # number is divisible by another number.  In other words, 4 % 2 == 0.
 
 # WRITE YOUR CODE HERE.  Name your method `primes`.
-
+def primes(n)
+  n < 0 ? [] : Prime.first(n)
+end
 class PrimesChallenge < MiniTest::Test
   def test_one_prime
     assert_equal [2], primes(1)
