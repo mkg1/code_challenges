@@ -6,7 +6,16 @@ require 'minitest/pride'
 # to the second parameter.
 
 # WRITE YOUR CODE HERE.  Name your method `complements?`.
+def complements?(array, number)
+  return false if array.nil? || array.length < 2
 
+  array.each_with_index do |x, i|
+    array[(i+1)..-1].each do |y|
+      return true if x + y == number
+    end
+  end
+  false
+end
 
 class DoubleLoopChallenge < MiniTest::Test
 
